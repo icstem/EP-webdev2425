@@ -1,6 +1,7 @@
 /* General layout */
 :root {
   --scheppers-blue: #1e3f6d;
+  --scheppers-yellow: rgb(255, 236, 28);
 }
 
 html {
@@ -21,7 +22,8 @@ body {
 footer{
   background-color: var(--scheppers-blue);
   padding: 0.8rem;
-  color: aliceblue;
+  color: var(--scheppers-yellow);
+  text-align: center;
 }
 
 main {
@@ -49,7 +51,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: gold;
+  color: var(--scheppers-yellow);
 }
 
 nav a.active:hover {
@@ -97,4 +99,97 @@ div.txt-img div.img {
 
 div.txt-img div.txt {
   grid-area: txt;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+div#menu-computer {
+  display: none;
+} 
+
+
+/* Computer view */
+@media (min-width: 825px) {
+  div#menu-mobile {
+    display: none;
+  }
+
+  /* navigation menu */
+  div#menu-computer {
+    display: block;
+  }
+
+  div img#schoollogo {
+    display: none;
+  }
+
+  nav ul {
+    display: block;
+  }
+
+  nav li {
+    display: inline-block;
+    padding: 0 0.5rem;
+  }
+
+  nav label[for='menu-checkbox'] {
+    display: none;
+  }
+  
+  nav ul {
+    align-self: center;
+    font-size: 1.5rem;
+  }
+  
+  nav img {
+    height: 100%;
+  }
+
+  /* grid txt-img */
+  div.txt-img {
+    grid-template-areas: "txt img";
+    grid-template-columns: 6fr 4fr;
+  }
+
+  div.txt-img div.img {
+    /* grid-area: img; */
+    align-self: center;
+    justify-self: center;
+  }
+
+  /* Header */
+  header {
+    background-image: url(../images/hero.png);
+    background-size: contain;  
+    background-repeat: no-repeat;
+    aspect-ratio: 7.5 / 1;
+    display: block grid;
+    grid-template-rows: 1fr;
+  }
+
+  header h1 {
+    justify-self: center;
+    align-self: center;
+    color: var(--scheppers-yellow);
+  }
+}
+
+
+/* Grote schermen */
+@media (min-width: 1024px) {
+  main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  div#menu-computer {
+    display: block grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 80px;
+  }
+
+  div img#schoollogo {
+    display: block;
+  }
 }
