@@ -1,0 +1,94 @@
+:root {
+  --scheppers-blue: #1e3f6d;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+footer{
+  background-color: var(--scheppers-blue);
+  padding: 0.8rem;
+  color: aliceblue;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* Navigation menu */
+nav a {
+  text-decoration: none;
+  color: var(--scheppers-blue);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: gold;
+}
+
+nav a.active:hover {
+  text-decoration: none;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.3rem 0.5rem;
+}
+
+
+/* MOBILE FIRST */
+
+/* Hamburger menu */
+nav img#hamburger-icon {
+  cursor: pointer;
+}
+nav ul {
+  display: none;
+}
+nav #menu-checkbox:checked ~ ul {
+  display: block;
+}
+nav #menu-checkbox {
+  display: none;
+}
+
+div.txt-img {
+  display: block grid;
+  grid-template-areas: 
+    "img"
+    "txt";
+}
+
+div.txt-img div.img {
+  grid-area: img;
+}
+
+div.txt-img div.txt {
+  grid-area: txt;
+}
