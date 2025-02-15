@@ -1,3 +1,4 @@
+/* General layout */
 :root {
   --scheppers-blue: #1e3f6d;
 }
@@ -21,6 +22,11 @@ footer{
   background-color: var(--scheppers-blue);
   padding: 0.8rem;
   color: aliceblue;
+}
+
+main {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 h1 {
